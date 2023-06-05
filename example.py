@@ -23,6 +23,7 @@ from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 import numpy as np
+from tensorflow.keras.utils import to_categorical
 
 import pescador
 
@@ -73,8 +74,8 @@ def setup_data():
     print(x_test.shape[0], 'test samples')
 
     # convert class vectors to binary class matrices
-    y_train = keras.utils.to_categorical(y_train, num_classes)
-    y_test = keras.utils.to_categorical(y_test, num_classes)
+    y_train = to_categorical(y_train, num_classes)
+    y_test = to_categorical(y_test, num_classes)
 
     return input_shape, (x_train, y_train), (x_test, y_test)
 
