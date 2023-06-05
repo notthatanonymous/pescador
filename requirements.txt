@@ -1,2 +1,2 @@
-keras
-tensorflow
+keras>=2.2
+tensorflow>=1.14
