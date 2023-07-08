@@ -16,15 +16,15 @@ https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py
 
 from __future__ import print_function
 import datetime
-import keras
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
-import numpy as np
-from tensorflow.keras.utils import to_categorical
 import tensorflow as tf
+from tensorflow import keras
+from tf.keras.datasets import mnist
+from tf.keras.models import Sequential
+from tf.keras.layers import Dense, Dropout, Flatten
+from tf.keras.layers import Conv2D, MaxPooling2D
+import numpy as np
+from tf.keras.utils import to_categorical
+
 
 import pescador
 
