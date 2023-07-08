@@ -24,6 +24,7 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 import numpy as np
 from tensorflow.keras.utils import to_categorical
+import tensorflow as tf
 
 import pescador
 
@@ -113,7 +114,7 @@ def build_model(input_shape):
     model.add(Dense(num_classes, activation='softmax'))
 
     model.compile(loss=keras.losses.categorical_crossentropy,
-                  optimizer=keras.optimizers.Adadelta(),
+                  optimizer=tf.keras.optimizers.Adadelta(),
                   metrics=['accuracy'])
     return model
 
