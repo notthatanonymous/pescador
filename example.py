@@ -38,7 +38,7 @@ import pescador
 
 batch_size = 128
 num_classes = 10
-epochs = 10
+epochs = 1
 
 # input image dimensions
 img_rows, img_cols = 28, 28
@@ -226,5 +226,6 @@ except KeyboardInterrupt:
 finally:
     print("Finished: {}".format(datetime.datetime.now()))
     scores = model.evaluate(X_test, Y_test, verbose=0)
+    print(scores)
     for val, name in zip(scores, model.metrics_names):
         print('Test {}: {:0.4f}'.format(name, val))
