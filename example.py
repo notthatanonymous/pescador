@@ -35,7 +35,7 @@ import pescador
 
 batch_size = 128
 num_classes = 10
-epochs = 12
+epochs = 10
 
 # input image dimensions
 img_rows, img_cols = 28, 28
@@ -118,8 +118,8 @@ def build_model(input_shape):
     model.add(Dropout(0.5))
     model.add(Dense(num_classes, activation='softmax'))
 
-    model.compile(loss=keras.losses.categorical_crossentropy,
-                  optimizer=keras.optimizers.Adadelta(),
+    model.compile(loss=tensorflow.keras.losses.categorical_crossentropy,
+                  optimizer=tensorflow.keras.optimizers.Adadelta(),
                   metrics=['accuracy'])
     return model
 
