@@ -5,24 +5,11 @@ A Keras Example
 ===============
 
 An example of how to use Pescador with Keras.
-
-Original Code source:
-https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py
 """
 
 ##############################################
 # Setup and Definitions
 ##############################################
-
-# from __future__ import print_function
-# import datetime
-# import keras
-# from keras.datasets import mnist
-# from keras.models import Sequential
-# from keras.layers import Dense, Dropout, Flatten
-# from keras.layers import Conv2D, MaxPooling2D
-# from keras import backend as K
-# import numpy as np
 
 import tensorflow
 
@@ -219,13 +206,11 @@ try:
         pescador.tuples(batches, 'X', 'y'),
         steps_per_epoch=steps_per_epoch,
         epochs=epochs,
-        verbose=1,
+        verbose=0,
         validation_data=(X_test, Y_test))
 except KeyboardInterrupt:
     print("Stopping early")
 finally:
     print("Finished: {}".format(datetime.datetime.now()))
     scores = model.evaluate(X_test, Y_test, verbose=0)
-    print(scores)
-    for val, name in zip(scores, model.metrics_names):
-        print('Test {}: {:0.4f}'.format(name, val))
+    print(f"\n\n\nScore: {scores[1]}\n\n\n")
