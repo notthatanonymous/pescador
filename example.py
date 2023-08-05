@@ -24,9 +24,9 @@ https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py
 # from keras import backend as K
 # import numpy as np
 
-import tensorflow as tf
+import tensorflow
 
-from tensorflow.keras import datasets, utils
+from tensorflow.keras import datasets, utils, losses, optimizers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
@@ -118,8 +118,8 @@ def build_model(input_shape):
     model.add(Dropout(0.5))
     model.add(Dense(num_classes, activation='softmax'))
 
-    model.compile(loss=tensorflow.keras.losses.categorical_crossentropy,
-                  optimizer=tensorflow.keras.optimizers.Adadelta(),
+    model.compile(loss=losses.categorical_crossentropy,
+                  optimizer=optimizers.Adadelta(),
                   metrics=['accuracy'])
     return model
 
