@@ -30,7 +30,10 @@ from tensorflow.keras import datasets, utils, losses, optimizers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
+
+import datetime
 import numpy as np
+
 import pescador
 
 batch_size = 128
